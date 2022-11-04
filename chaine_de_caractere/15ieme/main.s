@@ -13,11 +13,30 @@ push %ebx
 
 #votre code
 CLD
-lea string, %esi
-lea string, %edi
-movl $14, %ecx
-rep movsb
+mov $string, %esi
+lodsb
+add $28, %esi
 
+cmpb $0x41, (%esi)
+jb fin
+
+cmpb $0x5a, (%esi)
+jnb testMinuscule
+
+jmp Alphabet
+
+testMinuscule:
+cmpb $0x61, (%esi)
+jb fin
+cmpb $0x7a, (%esi)
+jnb fin
+
+Alphabet:
+lodsb
+jmp fin
+
+
+fin:
 popl %ebx
 popl %ebp
 ret
