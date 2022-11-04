@@ -1,6 +1,8 @@
 .data
 string:
 .asciz "My favourite number is FIFTEEN!\n"
+resultat:
+.asciz "" 
 
 
 .text
@@ -36,7 +38,12 @@ lodsb
 jmp fin
 
 
-fin:
+fin: #basee sur exemple offert par Mahfoud via discord
+movb %al, resultat
+push $resultat
+call printf
+addl $0x04, %esp
+
 popl %ebx
 popl %ebp
 ret
