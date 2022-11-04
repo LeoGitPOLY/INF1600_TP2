@@ -15,7 +15,7 @@ push %ebx
 CLD
 mov $string, %esi
 lodsb
-add $28, %esi
+add $13, %esi
 
 cmpb $0x41, (%esi)
 jb fin
