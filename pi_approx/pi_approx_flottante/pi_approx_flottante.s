@@ -2,7 +2,7 @@
 i:             
 .float  0       # i
 iteration:
-.int 50         # Nombre d'itérations
+.int 51         # Nombre d'itérations
 x:
 .float 2       
 y:
@@ -11,7 +11,7 @@ signe1:
 .float 1
 signe2:
 .float -1
-pie:             # Valeur du ratio de pie initial
+pie:             # Valeur du ratio de pie initial, changee a pie puisque gdb lis "pi" comme une constante et retourne 3.1416... lors d'un affichage et non la variable utilisee ici
 .float 0
 cte: 
 .float 1
@@ -85,6 +85,9 @@ fstps i
 jmp boucle
 
 fin:
+flds pie
+flds multiplicateur
+fmulp
 
 pop %ebx
 pop %ebp

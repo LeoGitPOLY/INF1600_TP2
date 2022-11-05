@@ -19,7 +19,7 @@ movl %ecx, %eax
 addl $1, %eax
 movl $2, %ebx
 mull %ebx
-addl $1, %eax
+subl $1, %eax
 movl %eax, %ebx
 movl $4, %eax
 divl %ebx
@@ -52,7 +52,7 @@ movl %ecx, %eax
 addl $1, %eax
 movl $2, %ebx
 mull %ebx
-addl $1, %eax
+subl $1, %eax
 movl %eax, %ebx
 movl $4, %eax
 divl %ebx
